@@ -168,7 +168,7 @@ if filePaths:
             concat_df = pd.concat([concat_df,df], axis = "rows", ignore_index =True)
 
         buffer = io.BytesIO()
-        FileDate = concat_df["Date"].unique()[0].date().strftime("%Y_%m_%d")
+        FileDate = concat_df["Date"].unique()[0].strftime("%Y_%m_%d")
         concatFileName = f"Attendance_Formatted_{FileDate}.parquet"
         concat_df.to_parquet(buffer, index=False)
 
