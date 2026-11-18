@@ -120,7 +120,7 @@ def getAttendanceFormat(filePath, AttendanceTimeThreshold = 0):
     final["ZoomAccount"] = ZoomAccount
     final.rename(columns = {"Email":"ZoomEmail", "Phone":"ZoomPhone"}, inplace=True)
 
-    FileDate = final["Date"].unique()[0].date().strftime("%Y_%m_%d")
+    FileDate = final["Date"].unique()[0].strftime("%Y_%m_%d")
     final.rename(columns = {"Email":"ZoomEmail", "Phone":"ZoomPhone"}, inplace=True)
 
     #localFileSaveName = f"{fileNamePart}_{fileName}_Formatted.csv"
