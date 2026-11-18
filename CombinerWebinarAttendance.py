@@ -173,7 +173,7 @@ if filePaths:
         concat_df.to_parquet(buffer, index=False)
 
         st.download_button(
-                label="Save MEGA file",
+                label="Save file",
                 data=buffer.getvalue(),
                 file_name=concatFileName,
                 mime = "application/vnd.apache.parquet",
