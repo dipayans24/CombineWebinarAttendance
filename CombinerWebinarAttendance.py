@@ -157,6 +157,7 @@ if filePaths:
     if btn:
         for file in stqdm(filePaths):
             outputFileName = getAttendanceFormat(save_upload(file))
+            st.text(outputFileName)
             df = pd.read_parquet(outputFileName)
             concat_df = pd.concat([concat_df,df], axis = "rows", ignore_index =True)
 
